@@ -76,40 +76,6 @@ You are a reflective assistant engaging in thorough reasoning.
 
 ---
 
-## 🔧 Training
-
-Run training using:
-
-```bash
-python train.py
-```
-
----
-
-## 💬 Inference
-
-⚠️ Important: Since training was done on **plain text format**, do NOT use chat templates during inference.
-
-```python
-inputs = tokenizer(
-    prompt,
-    return_tensors="pt",
-    truncation=True,
-    padding=True
-).to("cuda")
-
-outputs = model.generate(
-    **inputs,
-    max_new_tokens=512,
-    temperature=0.2
-)
-
-response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-print(response)
-```
-
----
-
 ## 📦 Export to GGUF
 
 Convert model for local inference:
@@ -135,31 +101,6 @@ GGUF is a lightweight format for running LLMs locally using tools like:
 ```bash
 ./main -m model.gguf -p "Explain AI in simple terms"
 ```
-
----
-
-## ⚠️ Common Pitfalls
-
-* ❌ Do NOT mix chat templates if training was plain text
-* ❌ Ensure tokenizer consistency during training & inference
-* ❌ Use correct attention masks when generating
-
----
-
-## 📈 Future Improvements
-
-* Convert training to chat format (LLaMA 3.x template)
-* Deploy via FastAPI / vLLM
-* Add evaluation metrics (BLEU, ROUGE)
-* Scale training steps
-
----
-
-## 🙌 Acknowledgements
-
-* Unsloth for efficient fine-tuning
-* Hugging Face ecosystem
-* ServiceNow AI for dataset
 
 ---
 
