@@ -28,19 +28,6 @@ This pipeline covers:
 
 ---
 
-## 📂 Project Structure
-
-```
-.
-├── train.py                # Training + fine-tuning script
-├── inference.py            # Inference script
-├── outputs/                # Training checkpoints
-├── rajat-001-3B-GGUF/     # Exported GGUF model
-└── README.md
-```
-
----
-
 ## ⚙️ Model Details
 
 * **Base Model**: `unsloth/Llama-3.2-3B-Instruct`
